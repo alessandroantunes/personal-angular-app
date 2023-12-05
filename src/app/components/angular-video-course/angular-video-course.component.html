@@ -1,0 +1,39 @@
+<div class="iframe-div" *ngIf="displayFrame">
+    <mat-card>
+        <mat-card-content>
+
+            <iframe [src]="classSelected | safeUrl" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </mat-card-content>
+    </mat-card>
+
+</div>
+
+<div class="arrows">
+
+    <button class="arrow-btn" [disabled]="actualClass == 0" mat-mini-fab (click)="changeVideo(actualClass-1)">
+        <mat-icon>arrow_back</mat-icon>
+
+    </button>
+
+    <button class="select-btn" mat-raised-button>
+        <!-- <mat-form-field class="select-btn"> -->
+        <!-- <div> -->
+
+        <mat-select [(value)]="actualClass" (valueChange)="changeVideo($event)">
+            <mat-option [value]="aulas.indexOf(class)"
+                *ngFor="let class of aulas">{{aulas.indexOf(class)+1}}/{{aulas.length}}</mat-option>
+        </mat-select>
+        <!-- </div> -->
+        <!-- </mat-form-field> -->
+
+    </button>
+
+    <button class="arrow-btn" [disabled]="actualClass == this.aulas.length-1" mat-mini-fab
+        (click)="changeVideo(actualClass+1)">
+        <mat-icon>arrow_forward</mat-icon>
+
+    </button>
+
+</div>

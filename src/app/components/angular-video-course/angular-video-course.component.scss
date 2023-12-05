@@ -1,0 +1,40 @@
+$height: 315*2px;
+$width: 560*2px;
+
+iframe {
+    width: $width;
+    height: $height;
+}
+
+.iframe-div {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+
+}
+
+.select-btn {
+    width: 5rem;
+    background-color: #424242;
+    color: white;
+}
+
+.select-btn mat-select {
+    width: 4rem;
+}
+
+.arrow-btn {
+    background-color: #424242;
+    color: white;
+
+
+}
+
+.arrows {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

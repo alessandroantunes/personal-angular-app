@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+
+            <mat-icon class="nav-icons" fontIcon="menu"></mat-icon>
+
+        </button>
+
+        <button mat-icon-button routerLink="/home">
+
+            <mat-icon class="nav-icons" fontIcon="home"></mat-icon>
+
+        </button>
+    </div>
+
+    <img (click)="openNewTab('https://angular.io/')" class="angular-logo" src="/assets/angular-logo.png">
+</nav>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let button of menuItems" routerLink="{{button.link}}">{{button.name}}</button>
+</mat-menu>
+
+<div>
+</div>
